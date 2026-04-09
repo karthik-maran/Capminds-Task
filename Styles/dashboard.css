@@ -24,10 +24,11 @@ body {
     margin-bottom: 12px;
 }
 
+
 /* ================= FILTER NAVBAR ================= */
 .dash-navbar {
     display: flex;
-    flex-wrap: wrap; /* 🔥 responsive */
+    flex-wrap: wrap; 
     gap: 10px;
     background: #fff;
     padding: 12px;
@@ -49,7 +50,7 @@ body {
     border-radius: 4px;
     background-color: #f9fafb;
 
-    flex: 1 1 150px; /* 🔥 responsive width */
+    flex: 1 1 150px; 
 }
 
 .patient-search input,
@@ -99,7 +100,7 @@ body {
         minmax(120px, 1fr)
         minmax(100px, 0.8fr);
 
-    min-width: 800px; /* scroll on small screens */
+    min-width: 800px; 
 }
 
 /* header */
