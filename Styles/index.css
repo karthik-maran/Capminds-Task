@@ -6,6 +6,26 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+.container {
+  display: flex;
+  width: 100%;
+}
+
+.side-dashboard {
+  width: 250px;
+  flex-shrink: 0;
+}
+
+#calendar-container {
+  flex: 1;
+  width: 100%;
+}
+
+
+
+
+
+
 /* ================= NAVBAR ================= */
 .nav-bar {
     background-color: #f1f5f8;
@@ -17,6 +37,9 @@ body {
     width: 100%;
     position: relative;
 }
+
+
+
 
 /* Logo left */
 .logo {
