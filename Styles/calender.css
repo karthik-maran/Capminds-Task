@@ -201,7 +201,7 @@ body {
     align-items: flex-end;
 }
 .docName{
-    font-size: 15px;
+    font-size: 14px;
     white-space: nowrap; 
     text-overflow: ellipsis;
 }
