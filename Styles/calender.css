@@ -26,7 +26,7 @@ body {
     gap: 15px;
     align-items: center;
     padding: 12px;
-    border-bottom: 1px solid #ccc;
+    
 }
 
 /* ================= NAV BUTTONS ================= */
@@ -121,40 +121,40 @@ body {
 }
 
 /* ================= DAYS HEADER ================= */
-.calender-days {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    text-align: center;
-    border-left: 1px solid #ccc;
-    border-top: 1px solid #ccc;
-    padding: 10px;
-    font-weight: 500;
-    min-width: 700px; 
-}
 
-/* ================= CALENDAR GRID ================= */
+.calender-days,
 .calender-dates {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    border-left: 1px solid #ccc;
-    border-top: 1px solid #ccc;
-    min-width: 700px; 
+    grid-template-columns: repeat(7,1fr);
+    
+    text-align: center;
+    
+    
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-width: 150px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    text-align: center;
+  
 }
 
 /* ================= DATE CELLS ================= */
+
 .calender-dates > div {
-    min-height: 140px;  
+    min-height: clamp(100px, 15vw, 150px);
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    padding: 6px;
+    
     font-size: 14px;
     box-sizing: border-box;
-
+   
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 
     position: relative;
+    min-width: 0;
 }
 
 /* ================= HOVER EFFECT ================= */
@@ -171,41 +171,46 @@ body {
 /* ================= APPOINTMENT CARD ================= */
 /* CARD LAYOUT */
 .appointment-card {
+    width: 95%;              
+    min-width: 0;             
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
     background: #99c1ef;
     border-top: 4px solid rgb(34, 125, 236);
     border-right: 2px solid rgb(93, 148, 225);
     border-radius: 6px;
-    width: 90%;
-    padding: 6px 10px;
-    margin-top: 5px;
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    overflow: hidden;
+    padding: 6px;
+    margin-top: 10px; 
+    margin-left: 5px;        
 }
-
 /* LEFT */
-.card-left {
-    display: flex;
-}
 
+.card-left,
 .card-text {
     display: flex;
     flex-direction: column;
     gap: 2px;
+    overflow: auto;
+    min-width: 0;
 }
 
 .name {
     font-weight: 700;
-    font-size: 16px;
-    align-items: flex-end;
-}
-.docName{
-    font-size: 14px;
-    white-space: nowrap; 
-    text-overflow: ellipsis;
+    font-size: clamp(10px, 1.2vw, 16px);  
 }
 
+.docName {
+    font-size: clamp(9px, 1vw, 14px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;  
+}
+
+.caltime {
+    font-size: clamp(8px, 0.9vw, 11px);
+}
 
 .status {
     font-size: 12px;
@@ -220,10 +225,7 @@ body {
     white-space: nowrap;
 }
 
-.caltime {
-    font-size: 11px;
-    font-weight: 500;
-}
+
 
 /* ICONS */
 .card-actions {
@@ -249,28 +251,25 @@ body {
 }
 
 /* ================= TABLET ================= */
-@media (max-width: 1024px) {
-    .calender-container {
-        padding: 20px;
-    }
 
-    .calender-dates > div {
-        min-height: 120px;
-        font-size: 13px;
-    }
-
-    .appointment-card {
-        font-size: 11px;
-    }
-
-    .doc-name-header {
-        font-size: 20px;
-    }
-}
 
 /* ================= MOBILE ================= */
 @media (max-width: 768px) {
 
+
+    .calender-container {
+        padding: 15px;
+        overflow-x: auto;  
+    }
+
+  
+    .calender-days,
+    .calender-dates {
+        grid-template-columns: repeat(7, 110px); 
+        min-width: 770px; 
+    }
+
+   
     .header {
         flex-wrap: wrap;
         justify-content: center;
@@ -288,10 +287,6 @@ body {
     .dropbtn {
         height: 28px;
         font-size: 12px;
-    }
-
-    .calender-container {
-        padding: 15px;
     }
 
     .calender-days {
