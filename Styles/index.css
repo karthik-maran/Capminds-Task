@@ -1,0 +1,300 @@
+/* ================= BODY ================= */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f1f5f8;
+    font-family: 'Inter', sans-serif;
+}
+
+/* ================= NAVBAR ================= */
+.nav-bar {
+    background-color: #f1f5f8;
+    height: 80px;
+    border-bottom: 2px solid #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+/* Logo left */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    left: 20px;
+    
+}
+
+/* Center content */
+.nav-item {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* ================= MAIN CONTAINER ================= */
+.container {
+    display: flex;
+    height: calc(100vh - 80px);
+}
+
+/* ================= SIDEBAR ================= */
+.side-dashboard {
+    width: 200px;
+    min-width: 200px;
+    background-color: #f1f5f8;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-right: 2px solid #e0e0e0;
+    transition: width 0.3s ease;
+}
+
+/* Collapsed */
+.side-dashboard.collapsed {
+    width: 70px;
+    min-width: 70px;
+}
+
+.side-dashboard.collapsed span {
+    display: none;
+}
+
+/* ================= MENU ================= */
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #6b7280;
+    transition: all 0.2s ease;
+}
+
+.menu-item span {
+    font-size: 16px;
+}
+
+/* Hover */
+.menu-item:hover {
+    background-color: #e8edf5;
+    color: #2563eb;
+}
+
+/* Active */
+.menu-item.active {
+    background-color: #dbeafe;
+    color: #2563eb;
+}
+
+/* Icons */
+.menu-item svg {
+    stroke: currentColor;
+}
+
+/* ================= BUTTON ================= */
+.book-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    gap: 8px;
+    font-size: 18px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #2C7BE5;
+    color: white;
+}
+
+/* ================= ICONS ================= */
+.calIcon,
+.dasIcon {
+    width: 30px;
+    height: 30px;
+}
+
+.plusIcon {
+    height: 20px;
+    width: 20px;
+}
+
+/* ================= SLIDER ================= */
+.slider-icon-box {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.slider-icon {
+    transform: scale(1.5);
+    color: #6b7280;
+}
+
+/* ================= CONTENT ================= */
+#calendar-container,
+#dashboard-container {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* ================= DASHBOARD WRAPPER ================= */
+.dashboard-container {
+    width: 95%;
+    max-width: 1400px;
+    margin: 20px auto;
+}
+
+/* ================= TOAST ================= */
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+
+    display: flex;
+    flex-direction:row;
+    align-items: flex-end; /* ensures right alignment */
+}
+
+.toast {
+    min-width: 220px;
+    max-width: 300px;
+
+    background-color: #16a34a;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-size: 14px;
+
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* ================= HEADER ================= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+
+    .side-dashboard {
+        width: 160px;
+        min-width: 160px;
+    }
+
+    .menu-item span {
+        font-size: 14px;
+    }
+
+    .book-btn {
+        font-size: 16px;
+        height: 45px;
+    }
+}
+/* ================= NORMAL ================= */
+.slider-icon-box {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* ================= COLLAPSED ================= */
+.side-dashboard.collapsed .slider-icon-box {
+    justify-content: center;   /* 🔥 center horizontally */
+    align-items: center;
+    width: 100%;
+}
+
+/* Optional: center vertically inside sidebar */
+.side-dashboard.collapsed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* 🔥 center everything */
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+    /* Stack layout */
+    .container {
+        flex-direction: row;
+        height: auto;
+    }
+
+    /* Sidebar becomes top bar */
+    .side-dashboard {
+        flex-direction: column;
+        width: 100%;
+        min-width: 100%;
+        height: auto;
+        overflow-x: auto;
+        border-right: none;
+        border-bottom: 2px solid #e0e0e0;
+    }
+
+    .menu-item {
+        flex-direction: column;
+        font-size: 12px;
+        min-width: 70px;
+    }
+
+    .menu-item span {
+        font-size: 12px;
+    }
+
+    /* Navbar fix */
+    .logo,
+    .nav-item {
+        position: static;
+        transform: none;
+    }
+
+    .nav-bar {
+        flex-direction: column;
+        height: auto;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    /* Content padding */
+    #calendar-container,
+    #dashboard-container {
+        padding: 10px;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 480px) {
+
+    .menu-item {
+        min-width: 60px;
+        padding: 8px;
+    }
+
+    .book-btn {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .toast {
+        font-size: 12px;
+        padding: 10px 16px;
+    }
+}

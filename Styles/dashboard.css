@@ -1,0 +1,219 @@
+/* ================= GLOBAL ================= */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f8;
+    font-family: 'Inter', sans-serif;
+
+    /* ✅ default font system */
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* ================= CONTAINER ================= */
+.dashboard-container {
+    max-width: 1600px;
+    margin: 40px auto;
+    padding: 0 16px;
+}
+
+/* ================= HEADER ================= */
+.dash-header {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+/* ================= FILTER NAVBAR ================= */
+.dash-navbar {
+    display: flex;
+    flex-wrap: wrap; /* 🔥 responsive */
+    gap: 10px;
+    background: #fff;
+    padding: 12px;
+    border-radius: 6px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.05);
+    margin-bottom: 15px;
+}
+
+/* ================= INPUT ================= */
+.patient-search,
+.doctor-search,
+.from-date-search,
+.to-date-search {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid #e5e7eb;
+    padding: 6px 10px;
+    border-radius: 4px;
+    background-color: #f9fafb;
+
+    flex: 1 1 150px; /* 🔥 responsive width */
+}
+
+.patient-search input,
+.doctor-search input,
+.from-date-search input,
+.to-date-search input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 14px;
+    width: 100%;
+}
+
+/* ================= APPOINTMENT CARD ================= */
+.appointment-details {
+    background: #fff;
+    border-radius: 6px;
+    padding: 15px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+/* ================= HEADER ================= */
+.appointment-header {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #374151;
+}
+
+/* ================= TABLE WRAPPER ================= */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* ================= TABLE ================= */
+.appointment-navbar,
+.appointment-row {
+    display: grid;
+    grid-template-columns: 
+        minmax(120px, 1fr)
+        minmax(140px, 1fr)
+        minmax(200px, 2fr)
+        minmax(120px, 1fr)
+        minmax(120px, 1fr)
+        minmax(120px, 1fr)
+        minmax(100px, 0.8fr);
+
+    min-width: 800px; /* scroll on small screens */
+}
+
+/* header */
+.appointment-navbar {
+    background-color: #f3f4f6;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6b7280;
+    border-radius: 4px;
+}
+
+/* rows */
+.appointment-row {
+    padding: 14px;
+    font-size: 14px;
+    border-bottom: 1px solid #e5e7eb;
+    align-items: center;
+}
+
+.appointment-row:hover {
+    background-color: #f9fafb;
+}
+
+/* ================= TEXT CONTROL ================= */
+.appointment-row div {
+    white-space: nowrap;
+}
+
+.appointment-row div:nth-child(3),
+.appointment-navbar div:nth-child(3) {
+    white-space: normal;
+}
+
+/* ================= TIME ================= */
+.time {
+    min-width: 100px;
+    font-size: 13px;
+}
+
+/* ================= ACTION ICONS ================= */
+.action-icons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.action-icons svg {
+    width: 22px;
+    height: 22px;
+    padding: 4px;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.action-icons svg:hover {
+    background-color: #b3caf9;
+}
+
+/* ================= BUTTON ================= */
+.update-btn {
+    padding: 6px 14px;
+    border: none;
+    height: 45px;
+    background: #3b82f6;
+    color: white;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+    .dash-header {
+        font-size: 22px;
+    }
+
+    .appointment-header {
+        font-size: 18px;
+    }
+
+    .dashboard-container {
+        margin: 20px;
+    }
+
+    .appointment-row {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .action-icons svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 480px) {
+
+    .dash-navbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .patient-search,
+    .doctor-search,
+    .from-date-search,
+    .to-date-search {
+        width: 100%;
+    }
+
+    .dash-header {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="/Styles/calender.css" as="style">
+    <link rel="stylesheet" href="/Styles/calender.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="calendar-scroll">
+    <div class="calender-container">
+        <div class="header">
+            <button class="previous-btn">
+                <svg fill="black" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" class="prev-btn">
+                    <path d="M 26 6 L 6 15.21875 L 6 16.78125 L 26 26 L 26 23.84375 L 9.46875 16 L 26 8.15625 Z">
+
+                    </path>
+                    </svg> 
+            </button>
+            <div class="selected-date">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3.33333 14.6667C2.96667 14.6667 2.65267 14.536 2.39133 14.2747C2.13 14.0134 1.99956 13.6996 2 13.3334V4.00004C2 3.63337 2.13067 3.31937 2.392 3.05804C2.65333 2.79671 2.96711 2.66626 3.33333 2.66671H4V1.33337H5.33333V2.66671H10.6667V1.33337H12V2.66671H12.6667C13.0333 2.66671 13.3473 2.79737 13.6087 3.05871C13.87 3.32004 14.0004 3.63382 14 4.00004V13.3334C14 13.7 13.8693 14.014 13.608 14.2754C13.3467 14.5367 13.0329 14.6672 12.6667 14.6667H3.33333ZM3.33333 13.3334H12.6667V6.66671H3.33333V13.3334ZM3.33333 5.33337H12.6667V4.00004H3.33333V5.33337Z" fill="#2E2E2E"/>
+                </svg>
+
+                <span id="curDate">Monday 18,2026</span>
+            </div>
+            <button class="next-btn">
+                <svg fill="black" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" class="nex-btn">
+                        <path d="M 26 6 L 6 15.21875 L 6 16.78125 L 26 26 L 26 23.84375 L 9.46875 16 L 26 8.15625 Z">
+
+                        </path>
+                </svg> 
+            </button>
+
+            <div class="today-icon " id="today">Today</div>
+            <div class="dropdown">
+                <button id="dropBtn" class="dropbtn">Month</button>
+
+                <div class="dropdown-content">
+                     <div class="item">Month</div>
+                     <div class="item">Week</div>
+                     <div class="item">Year</div>
+                 </div>
+             </div>
+
+        </div>
+        <div class="doc-name-header"><span>Appointments</span></div>
+        
+        <div class="calender-days">
+            <div>SUNDAY</div><div>MONDAY</div><div>TUESDAY</div><div>WEDNESDAY</div><div>THURSDAY</div><div>FRIDAY</div><div>SATURDAY</div>
+        </div>
+        <div class="calender-dates" id="dates" ></div>
+        </div>
+    </div>
+    
+<script src="/Scripts/calender.js"></script>
+<script src="Scripts/appointment.js"></script>
+</body>
+</html>
