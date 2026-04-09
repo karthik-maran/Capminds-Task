@@ -196,9 +196,13 @@ body {
 }
 
 .name {
-    font-weight: 600;
-    font-size: 13px;
+    font-weight: 700;
+    font-size: 16px;
 }
+.docName{
+    font-size: 15px;
+}
+
 
 .status {
     font-size: 12px;
