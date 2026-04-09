@@ -145,7 +145,7 @@ body {
     min-height: clamp(100px, 15vw, 150px);
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    
+    border-radius: 5px;
     font-size: 14px;
     box-sizing: border-box;
    
