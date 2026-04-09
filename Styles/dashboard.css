@@ -63,6 +63,15 @@ body {
     font-size: 14px;
     width: 100%;
 }
+.no-appointments {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    min-height: 100px;
+    font-size: 20px;
+    color: #888;
+}
 
 /* ================= APPOINTMENT CARD ================= */
 .appointment-details {

@@ -12,7 +12,13 @@ let appointments = JSON.parse(localStorage.getItem("appointments")) || [];
 // Render function
 function renderAppointments(appointments) {
     appointmentBody.innerHTML = "";
-
+     if (!appointments || appointments.length === 0) {
+        const emptyMsg = document.createElement("div");
+        emptyMsg.classList.add("no-appointments");
+        emptyMsg.innerText = "No appointments found!";
+        appointmentBody.appendChild(emptyMsg);
+        return;
+    }
     appointments.forEach((item, index) => {
         const row = document.createElement("div");
         row.classList.add("appointment-row");
